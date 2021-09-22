@@ -3,7 +3,8 @@
 <html>
     <head>
         <head lang="pt-br">
-        <title>Tensão!</title>
+        <title>Corrente</title>
+        <link href="../ProjetoConversorSenai/style.css" rel="stylesheet">
     </head>
     <script type="text/javascript"></script>
     <body>
