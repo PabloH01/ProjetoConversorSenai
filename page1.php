@@ -13,9 +13,9 @@
         <div>
             <!--Div para escolher grand-->
             <button onclick="window.location.href='../ProjetoConversorSenai/calcularTensao.php'">Tensão (Volts - V)</button>
-            <button onclick="">Resistência (Ohms - R)</button>
-            <button onclick="">Potencia (Watts - P)</button>
-            <button onclick="">Corrente (Amperes - A)</button>
+            <button onclick="window.location.href='../ProjetoConversorSenai/calcularResistencia.php'">Resistência (Ohms - R)</button>
+            <button onclick="window.location.href='../ProjetoConversorSenai/calcularPotencia.php'">Potencia (Watts - P)</button>
+            <button onclick="window.location.href='../ProjetoConversorSenai/calcularCorrente.php'">Corrente (Amperes - A)</button>
         </div>
     </section>
     </body>

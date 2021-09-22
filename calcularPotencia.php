@@ -9,25 +9,25 @@
     <body>
     <section>
         <div>
-            <p>Vamos aos calculos! [Tensão - V]</p>
+            <p>Vamos aos calculos! [Potência - W]</p>
             <p>Insira os valores respectivamente:</p>
             <form action="" method="post">
             Digite o valor a ser convertido:
                 <input type="number" step="any" id="valor1" name="valor1" placeholder="Exemplo: 2,5"><br>
                 <br>
-                Megavolt (MV)<input type="radio" name="op1" value="MegaEntrada"><br>
-                Kilovolt (KV)<input type="radio" name="op1" value="KiloEntrada"><br>
-                Volt (V)<input type="radio" name="op1" value="VoltEntrada"><br>
-                Milivolt (mV)<input type="radio" name="op1" value="MiliEntrada"><br>
-                Microvolt (uV)<input type="radio" name="op1" value="MicroEntrada"><br> 
+                MegaWatt (MW)<input type="radio" name="op1" value="MegaEntrada"><br>
+                KiloWatt (KW)<input type="radio" name="op1" value="KiloEntrada"><br>
+                Watt (W)<input type="radio" name="op1" value="WattEntrada"><br>
+                MiliWatt (mW)<input type="radio" name="op1" value="MiliEntrada"><br>
+                MicroWatt (uW)<input type="radio" name="op1" value="MicroEntrada"><br> 
                 <br><br>
                 <label>Para qual unidade você deseja converter?</label>
                 <br>
-                Megavolt (MV)<input type="radio" name="op2" value="MegaSaida"><br>
-                Kilovolt (KV)<input type="radio" name="op2" value="KiloSaida"><br>
-                Volt (V)<input type="radio" name="op2" value="VoltSaida"><br>
-                Milivolt (mV)<input type="radio" name="op2" value="MiliSaida"><br>
-                Microvolt (uV)<input type="radio" name="op2" value="MicroSaida"><br>
+                MegaWatt (MW)<input type="radio" name="op2" value="MegaSaida"><br>
+                KiloWatt (KW)<input type="radio" name="op2" value="KiloSaida"><br>
+                Watt (W)<input type="radio" name="op2" value="WattSaida"><br>
+                MiliWatt (mW)<input type="radio" name="op2" value="MiliSaida"><br>
+                MicroWatt (uW)<input type="radio" name="op2" value="MicroSaida"><br>
                 <br><br>
                 <button type="summit" onclick='document.write("<?php calculo(); ?>")'>Calcular</button>
                 <button type="summit" onclick='window.location.href="../ProjetoConversorSenai/index.html"'>Retornar</button>
@@ -48,8 +48,8 @@ function calculo(){
     else if($_POST['op1'] == "KiloEntrada"){
         $entrada = 'KiloE';
     }
-    else if($_POST['op1'] == "VoltEntrada"){
-        $entrada = 'VoltE';
+    else if($_POST['op1'] == "WattEntrada"){
+        $entrada = 'WattE';
     }
     else if($_POST['op1'] == "MiliEntrada"){
         $entrada = 'MiliE';
@@ -64,8 +64,8 @@ function calculo(){
     else if($_POST['op2'] == "KiloSaida"){
         $saida = 'KiloS';
     }
-    else if($_POST['op2'] == "VoltSaida"){
-        $saida = 'VoltS';
+    else if($_POST['op2'] == "WattSaida"){
+        $saida = 'WattS';
     }
     else if($_POST['op2'] == "MiliSaida"){
         $saida = 'MiliS';
@@ -84,7 +84,7 @@ function calculo(){
     else if($entrada == 'KiloE' and $saida == 'KiloS'){
         echo 'Não é possível converter valores de uma mesma unidade!';
     }
-    else if($entrada == 'VoltE' and $saida == 'VoltS'){
+    else if($entrada == 'WattE' and $saida == 'WattS'){
         echo 'Não é possível converter valores de uma mesma unidade!';
     }
     else if($entrada == 'MiliE' and $saida == 'MiliS'){
@@ -93,90 +93,90 @@ function calculo(){
     else if($entrada == 'MicroE' and $saida == 'MicroS'){
         echo 'Não é possível converter valores de uma mesma unidade!';
     }
-    //conversão MEGAVOLT
+    //conversão MEGAWATT
     if($entrada == 'MegaE' and $saida == 'KiloS'){
         $valor = $valor * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' KV';
+        echo 'O resultado da conversão é: ', $valor, ' KW';
     }
-    else if($entrada == 'MegaE' and $saida == 'VoltS'){
+    else if($entrada == 'MegaE' and $saida == 'WattS'){
         $valor = $valor * 1000 * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' V';
+        echo 'O resultado da conversão é: ', $valor, ' W';
     }
     else if($entrada == 'MegaE' and $saida == 'MiliS'){
         $valor = $valor * 1000 * 1000 * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' mV';
+        echo 'O resultado da conversão é: ', $valor, ' mW';
     }
     else if($entrada == 'MegaE' and $saida == 'MicroS'){
         $valor = $valor * 1000 * 1000 * 1000 * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' uV';
+        echo 'O resultado da conversão é: ', $valor, ' uW';
     }
-    //conversão QUILOVOLT
+    //conversão QUILOWATT
     if($entrada == 'KiloE' and $saida == 'MegaS'){
         $valor = $valor / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' MV';
+        echo 'O resultado da conversão é: ', $valor, ' MW';
     }
-    else if($entrada == 'KiloE' and $saida == 'VoltS'){
+    else if($entrada == 'KiloE' and $saida == 'WattS'){
         $valor = $valor * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' V';
+        echo 'O resultado da conversão é: ', $valor, ' W';
     }
     else if($entrada == 'KiloE' and $saida == 'MiliS'){
         $valor = $valor * 1000 * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' mV';
+        echo 'O resultado da conversão é: ', $valor, ' mW';
     }
     else if($entrada == 'KiloE' and $saida == 'MicroS'){
         $valor = $valor * 1000 * 1000 * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' uV';
+        echo 'O resultado da conversão é: ', $valor, ' uW';
     }
-    //conversão VOLT
-    if($entrada == 'VoltE' and $saida == 'MegaS'){
+    //conversão WATT
+    if($entrada == 'WattE' and $saida == 'MegaS'){
         $valor = $valor / 1000 / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' MV';
+        echo 'O resultado da conversão é: ', $valor, ' MW';
     }
-    else if($entrada == 'VoltE' and $saida == 'KiloS'){
+    else if($entrada == 'WattE' and $saida == 'KiloS'){
         $valor = $valor / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' kV';
+        echo 'O resultado da conversão é: ', $valor, ' kW';
     }
-    else if($entrada == 'VoltE' and $saida == 'MiliS'){
+    else if($entrada == 'WattE' and $saida == 'MiliS'){
         $valor = $valor * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' mV';
+        echo 'O resultado da conversão é: ', $valor, ' mW';
     }
-    else if($entrada == 'VoltE' and $saida == 'MicroS'){
+    else if($entrada == 'WattE' and $saida == 'MicroS'){
         $valor = $valor * 1000 * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' uV';
+        echo 'O resultado da conversão é: ', $valor, ' uW';
     }
-    //conversão MILIVOLT
+    //conversão MILIWATT
     if($entrada == 'MiliE' and $saida == 'MegaS'){
         $valor = $valor / 1000 / 1000 / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' MV';
+        echo 'O resultado da conversão é: ', $valor, ' MW';
     }
     else if($entrada == 'MiliE' and $saida == 'KiloS'){
         $valor = $valor / 1000 / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' kV';
+        echo 'O resultado da conversão é: ', $valor, ' kW';
     }
-    else if($entrada == 'MiliE' and $saida == 'VoltS'){
+    else if($entrada == 'MiliE' and $saida == 'WattS'){
         $valor = $valor / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' V';
+        echo 'O resultado da conversão é: ', $valor, ' W';
     }
     else if($entrada == 'MiliE' and $saida == 'MicroS'){
         $valor = $valor * 1000;
-        echo 'O resultado da conversão é: ', $valor, ' uV';
+        echo 'O resultado da conversão é: ', $valor, ' uW';
     }
-    //conversão MICROVOLT
+    //conversão MICROHM
     if($entrada == 'MicroE' and $saida == 'MegaS'){
         $valor = $valor / 1000 / 1000 / 1000 / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' MV';
+        echo 'O resultado da conversão é: ', $valor, ' MW';
     }
     else if($entrada == 'MicroE' and $saida == 'KiloS'){
         $valor = $valor / 1000 / 1000 / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' kV';
+        echo 'O resultado da conversão é: ', $valor, ' kW';
     }
-    else if($entrada == 'MicroE' and $saida == 'VoltS'){
+    else if($entrada == 'MicroE' and $saida == 'WattS'){
         $valor = $valor / 1000 / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' V';
+        echo 'O resultado da conversão é: ', $valor, ' W';
     }
     else if($entrada == 'MicroE' and $saida == 'MiliS'){
         $valor = $valor / 1000;
-        echo 'O resultado da conversão é: ', $valor, ' mV';
+        echo 'O resultado da conversão é: ', $valor, ' mW';
     }
     //nenhuma
     else if($entrada == false or $saida == false){
