@@ -30,8 +30,8 @@
                 Milivolt (mV)<input type="radio" name="op2" value="MiliSaida"><br>
                 Microvolt (uV)<input type="radio" name="op2" value="MicroSaida"><br>
                 <br><br>
-                <button type="summit" onclick='document.write("<?php calculo(); ?>")'>Calcular</button>
-                <button type="summit" onclick='window.location.href="../ProjetoConversorSenai/index.html"'>Retornar</button>
+                <button type="submit" onclick='document.write("<?php calculo(); ?>")'>Calcular</button>
+                <button onclick="window.location.href='../ProjetoConversorSenai/page1.php'">Retornar</button>
             </form>
         </div>
     </section>
