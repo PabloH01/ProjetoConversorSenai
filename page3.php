@@ -12,9 +12,9 @@
             <div>
                 <!--Div para escolher form-->
                 <p><strong>Resistor - Calucular resistência em:</strong></p>
-                <button onclick="window.location.href='../ProjetoConversorSenai/serieR.php'">Série</button>
-                <button onclick="window.location.href='../ProjetoConversorSenai/paraleloR.php'">Paralelo</button>
-                <button onclick="window.location.href='../ProjetoConversorSenai/mistaR.php'">Forma Mista</button>
+                <button onclick="window.location.href='../ProjetoConversorSenai/formulas/serieR.php'">Série</button>
+                <button onclick="window.location.href='../ProjetoConversorSenai/formulas/paraleloR.php'">Paralelo</button>
+                <button onclick="window.location.href='../ProjetoConversorSenai/formulas/mistaR.php'">Forma Mista</button>
                 <p>Resistor - Resistência</p>
                 <button onclick="window.location.href='../ProjetoConversorSenai/calcularPotencia.php'">Potencia (Watts - P)</button>
                 <button onclick="window.location.href='../ProjetoConversorSenai/calcularCorrente.php'">Corrente (Amperes - A)</button>
